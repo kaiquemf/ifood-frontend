@@ -15,6 +15,7 @@ $ifood-frontend-theme: mat.define-theme((
   @include mat.all-component-themes($ifood-frontend-theme);
 }
 
+* { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 :root { font-size: 62.5% }
