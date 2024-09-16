@@ -19,6 +19,6 @@ $ifood-frontend-theme: mat.define-theme((
 * { margin: 0; padding: 0; box-sizing: border-box; font-size: 1.6rem; &:disabled { cursor: not-allowed !important; } }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-button, a, li { cursor: pointer; list-style: none; text-decoration: none; background: none; border: none; }
+button, a, li { cursor: pointer; list-style: none; background: none; border: none; }
 button { &:disabled { cursor: not-allowed };}
 .mat-mdc-simple-snack-bar { * { font-size: 1.6rem !important; font-weight: 200 !important; } }

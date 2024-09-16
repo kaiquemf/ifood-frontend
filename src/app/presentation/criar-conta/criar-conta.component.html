@@ -1,0 +1,35 @@
+<main>
+  <section id="area-login">
+    <main>
+      <div>
+        <h1>Bem Vindo</h1>
+        <span>Crie sua conta para utilizar o iFlow agora.</span>
+      </div>
+      <form [formGroup]="criarContaForm">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Nome do Estabelecimento</mat-label>
+          <input matInput formControlName="nomeEmpresa" type="text" readonly>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email" readonly>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Senha</mat-label>
+          <input matInput formControlName="senha" type="password" readonly>
+        </mat-form-field>
+      </form>
+      <button mat-raised-button disabled (click)="criarConta(criarContaForm)" id="botao-login">Criar Conta</button>
+      <button disabled id="botao-ifood"><span><img ngSrc="assets/ifood-logo.png" width="42" height="42" priority> Conecte-se com o Ifood</span></button>
+      <a routerLink="/" id="botao-entrar">já tem uma conta? clique para entrar</a>
+    </main>
+  </section>
+
+  <section id="area-imagem">
+    <img ngSrc="assets/imagem-criar-conta.png" width="852" height="678" priority>
+  </section>
+</main>
+
