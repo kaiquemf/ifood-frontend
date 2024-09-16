@@ -1,0 +1,21 @@
+
+@use '@angular/material' as mat;
+@include mat.core();
+$ifood-frontend-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  density: (
+    scale: 0,
+  )
+));
+:root {
+  @include mat.all-component-themes($ifood-frontend-theme);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root { font-size: 62.5% }
+button, a, li { cursor: pointer; list-style: none; text-decoration: none; background: none; border: none; }
