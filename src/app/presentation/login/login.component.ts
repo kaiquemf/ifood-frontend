@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
   public entrar(form: FormGroup) {
 
     if (form.value.email === this.credenciaisLogin.email && form.value.senha === this.credenciaisLogin.senha) {
-      this.router.navigate(["/criar-conta"], {skipLocationChange: true})
+      this.router.navigate(["/relatorios"], {skipLocationChange: true})
         .then(() => {
           this.snackBar.open("Acesso concedido!", '✖️');
         });
