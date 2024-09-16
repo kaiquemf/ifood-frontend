@@ -1,0 +1,28 @@
+<main>
+  <section id="area-imagem">
+    <img ngSrc="assets/imagem-login.png" width="852" height="633" priority>
+  </section>
+
+  <section id="area-login">
+    <main>
+      <div>
+        <h1>Olá,</h1>
+        <span>Bem vindo de volta ao iFlow</span>
+      </div>
+      <form [formGroup]="loginFormGroup">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Senha</mat-label>
+          <input matInput formControlName="senha" type="password">
+        </mat-form-field>
+      </form>
+      <button mat-raised-button [disabled]="loginFormGroup.invalid" (click)="entrar(loginFormGroup)" id="botao-login">Entrar</button>
+      <button disabled id="botao-ifood"><span><img ngSrc="assets/ifood-logo.png" width="42" height="42" priority> Conecte-se com o Ifood</span></button>
+    </main>
+  </section>
+</main>

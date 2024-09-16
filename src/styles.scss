@@ -15,8 +15,10 @@ $ifood-frontend-theme: mat.define-theme((
   @include mat.all-component-themes($ifood-frontend-theme);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+:root { font-size: 62.5% }
+* { margin: 0; padding: 0; box-sizing: border-box; font-size: 1.6rem; &:disabled { cursor: not-allowed !important; } }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-:root { font-size: 62.5% }
 button, a, li { cursor: pointer; list-style: none; text-decoration: none; background: none; border: none; }
+button { &:disabled { cursor: not-allowed };}
+.mat-mdc-simple-snack-bar { * { font-size: 2rem !important; } }
