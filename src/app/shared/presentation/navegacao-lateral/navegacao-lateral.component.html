@@ -1,0 +1,36 @@
+<main>
+  <img ngSrc="assets/ifood-logo.png" width="84" height="84" priority>
+  <nav>
+    <section>
+      <h4>Menu Principal</h4>
+      <ul>
+        <li>
+          <a routerLink="/dashboard" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+            <fa-icon [icon]="faChartSimple"></fa-icon>Dashboard
+          </a>
+        </li>
+        <li>
+          <a routerLink="/transacoes" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+            <fa-icon [icon]="faCalculator"></fa-icon>Transações
+          </a>
+        </li>
+        <li>
+          <a routerLink="/pagamentos" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+            <fa-icon [icon]="faMoneyBill"></fa-icon>Pagamentos
+          </a>
+        </li>
+        <li>
+          <a routerLink="/relatorios" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+            <fa-icon [icon]="faClipboard"></fa-icon>Relatórios
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <a routerLink="/configuracoes" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+        <fa-icon [icon]="faGear"></fa-icon>Configurações
+      </a>
+    </section>
+  </nav>
+</main>
