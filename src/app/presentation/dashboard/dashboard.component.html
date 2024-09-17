@@ -1,0 +1,49 @@
+<app-navegacao-lateral></app-navegacao-lateral>
+
+<main>
+  <header>
+    <section>
+      <h1>Dashboard</h1>
+      <span>{{dataAtual}}</span>
+    </section>
+
+    <section>
+    </section>
+  </header>
+
+  <section id="cards-principais">
+    <div id="card" *ngFor="let card of dataSource">
+      <h3>{{ card.titulo }}</h3>
+
+      <section>
+        <span>{{card.valor}}</span>
+        <p>{{card.descricao}}</p>
+      </section>
+    </div>
+  </section>
+
+  <section id="seccao-dashboards">
+    <ngx-charts-bar-vertical
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="data"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [showGridLines]="false" id="dashboard-barras">
+    </ngx-charts-bar-vertical>
+
+    <ngx-charts-pie-chart
+      [view]="viewPizza"
+      [scheme]="colorScheme"
+      [results]="data"
+      [legend]="showLegend"
+      [legendTitle]="'Pedidos Totais'"
+      id="dashboard-pie">
+    </ngx-charts-pie-chart>
+  </section>
+</main>
