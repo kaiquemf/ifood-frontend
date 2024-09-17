@@ -1,11 +1,13 @@
-import { MatFormField, MatLabel } from "@angular/material/form-field";
-import { MatButton } from "@angular/material/button";
+import {MatFormField, MatLabel, MatPrefix} from "@angular/material/form-field";
+import {MatButton, MatIconButton} from "@angular/material/button";
 import {FormBuilder, FormGroup, ReactiveFormsModule } from "@angular/forms";
 import { MatInput } from "@angular/material/input";
 import { NgOptimizedImage } from "@angular/common";
 import {Component, OnInit} from '@angular/core';
 import { MatIcon } from "@angular/material/icon";
 import {RouterLink} from "@angular/router";
+import {FaIconComponent} from "@fortawesome/angular-fontawesome";
+import {faBuilding, faLock, faUser} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-criar-conta',
@@ -18,13 +20,19 @@ import {RouterLink} from "@angular/router";
     NgOptimizedImage,
     ReactiveFormsModule,
     MatIcon,
-    RouterLink
+    RouterLink,
+    MatIconButton,
+    FaIconComponent,
+    MatPrefix
   ],
   templateUrl: './criar-conta.component.html',
   styleUrls: ['./criar-conta.component.scss', '../../shared/scss/login.scss']
 })
 export class CriarContaComponent implements OnInit {
   criarContaForm!: FormGroup;
+  protected readonly faBuilding = faBuilding;
+  protected readonly faUser = faUser;
+  protected readonly faLock = faLock;
 
   constructor() { }
 

@@ -39,7 +39,7 @@ main {
     button {
       border-radius: 5px;
 
-      &:disabled {
+      &:disabled#botao-login, &:disabled#botao-ifood {
         background: rgba(26, 27, 31, 0.12) !important;
         color: rgba(26, 27, 31, 0.38) !important;
       }

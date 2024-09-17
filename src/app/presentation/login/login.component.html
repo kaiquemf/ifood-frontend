@@ -13,11 +13,13 @@
 
         <mat-form-field appearance="outline">
           <mat-label>Email</mat-label>
-          <input matInput formControlName="email" type="email">
+            <button matPrefix mat-icon-button disabled><fa-icon [icon]="faUser"></fa-icon></button>
+            <input matInput formControlName="email" type="email">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Senha</mat-label>
+          <button matPrefix mat-icon-button disabled><fa-icon [icon]="faLock"></fa-icon></button>
           <input matInput formControlName="senha" type="password">
         </mat-form-field>
       </form>
