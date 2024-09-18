@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavegacaLateralComponent } from './navegacao-lateral.component';
+import { NavegacaoLateralComponent } from './navegacao-lateral.component';
 
-describe('NavegacaLateralComponent', () => {
-  let component: NavegacaLateralComponent;
-  let fixture: ComponentFixture<NavegacaLateralComponent>;
+describe('NavegacaoLateralComponent', () => {
+  let component: NavegacaoLateralComponent;
+  let fixture: ComponentFixture<NavegacaoLateralComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavegacaLateralComponent]
+      imports: [NavegacaoLateralComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NavegacaLateralComponent);
+    fixture = TestBed.createComponent(NavegacaoLateralComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

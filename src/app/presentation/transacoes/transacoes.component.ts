@@ -24,16 +24,16 @@ export interface TransacoesModel {
 }
 
 const ELEMENT_DATA: TransacoesModel[] = [
-  { id: 1, tipo: 'Receita', valor: 25.00, data: '2023-09-01 12:30:00', descricao: 'Pedido de Burger Clássico - Cliente: João Silva' },
-  { id: 2, tipo: 'Receita', valor: 35.50, data: '2023-09-01 13:15:00', descricao: 'Pedido de Pizza Margherita - Cliente: Maria Souza' },
-  { id: 3, tipo: 'Despesa', valor: 10.00, data: '2023-09-01 14:00:00', descricao: 'Compra de embalagens' },
-  { id: 4, tipo: 'Receita', valor: 18.00, data: '2023-09-02 11:45:00', descricao: 'Pedido de Salada Caesar - Cliente: Carlos Lima' },
-  { id: 5, tipo: 'Receita', valor: 40.00, data: '2023-09-02 12:00:00', descricao: 'Pedido de Sushi Combo - Cliente: Ana Pereira' },
-  { id: 6, tipo: 'Despesa', valor: 20.00, data: '2023-09-02 13:30:00', descricao: 'Compra de ingredientes frescos' },
-  { id: 7, tipo: 'Receita', valor: 15.00, data: '2023-09-03 10:00:00', descricao: 'Pedido de Smoothie Tropical - Cliente: Paula Gomes' },
-  { id: 8, tipo: 'Receita', valor: 22.00, data: '2023-09-03 11:30:00', descricao: 'Pedido de Frango Grelhado com Legumes - Cliente: José Oliveira' },
-  { id: 9, tipo: 'Receita', valor: 12.00, data: '2023-09-03 12:15:00', descricao: 'Pedido de Pastel de Queijo - Cliente: Fernanda Costa' },
-  { id: 10, tipo: 'Despesa', valor: 30.00, data: '2023-09-03 13:00:00', descricao: 'Compra de bebidas' },
+  { id: 1, tipo: 'Receita', valor: 25.00, data: '01/09/23 12:30', descricao: 'Burger Clássico - Cliente: João Silva' },
+  { id: 2, tipo: 'Receita', valor: 35.50, data: '01/09/23 13:15', descricao: 'Pizza Margherita - Cliente: Maria Souza' },
+  { id: 3, tipo: 'Despesa', valor: 10.00, data: '01/09/23 14:00', descricao: 'embalagens' },
+  { id: 4, tipo: 'Receita', valor: 18.00, data: '02/09/23 11:45', descricao: 'Salada Caesar - Cliente: Carlos Lima' },
+  { id: 5, tipo: 'Receita', valor: 40.00, data: '02/09/23 12:00', descricao: 'Sushi Combo - Cliente: Ana Pereira' },
+  { id: 6, tipo: 'Despesa', valor: 20.00, data: '02/09/23 13:30', descricao: 'ingredientes frescos' },
+  { id: 7, tipo: 'Receita', valor: 15.00, data: '01/09/23 10:00', descricao: 'Smoothie Tropical - Cliente: Paula Gomes' },
+  { id: 8, tipo: 'Receita', valor: 22.00, data: '03/09/23 11:30', descricao: 'Frango Grelhado com Legumes - Cliente: José Oliveira' },
+  { id: 9, tipo: 'Receita', valor: 12.00, data: '03/09/23 12:15', descricao: 'Pastel de Queijo - Cliente: Fernanda Costa' },
+  { id: 10, tipo: 'Despesa', valor: 30.00, data: '03/09/23 13:00', descricao: 'bebidas' },
 ]
 
 @Component({

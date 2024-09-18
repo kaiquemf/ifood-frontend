@@ -2,6 +2,7 @@ main, nav, ul {
   display: flex;
   flex-direction: column;
 }
+
 main {
   position: fixed;
   top: 0;
@@ -16,13 +17,6 @@ main {
   nav {
     padding: 10rem 0;
     gap: 4rem;
-  }
-
-  h4 {
-    align-self: self-start;
-    font-size: 1.2rem;
-    color: #9e9e9e;
-    margin-bottom: 2rem;
   }
 
   ul {
@@ -59,5 +53,69 @@ main {
 
   a.active-link fa-icon {
     color: #EA1D2C;
+  }
+}
+
+@media (max-width: 1023px) {
+  main {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    height: 10rem;
+    bottom: 0;
+    top: auto;
+    padding: 1rem;
+    flex-direction: row;
+    justify-content: space-around;
+    border-right: none;
+    border-top: 1px solid #d8d8d8;
+  }
+
+  nav {
+    padding: 0;
+    gap: 1rem;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    gap: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    flex-direction: column;
+    font-size: 0.8rem;
+    gap: 0;
+  }
+
+  img {
+    display: none;
+  }
+
+  a span {
+    display: none;
+  }
+}
+
+@media (max-width: 425px) {
+  main {
+    padding: 0.5rem;
+  nav {
+    gap: 2rem;
+  }
+  }
+
+
+  ul {
+    gap: 0.5rem;
   }
 }

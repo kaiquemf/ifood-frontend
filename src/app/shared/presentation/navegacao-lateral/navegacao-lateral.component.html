@@ -5,22 +5,22 @@
       <ul>
         <li>
           <a routerLink="/dashboard" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
-            <fa-icon [icon]="faChartSimple"></fa-icon>Dashboard
+            <fa-icon [icon]="faChartSimple" [size]="isMobile ? '2x' : undefined"></fa-icon>Dashboard
           </a>
         </li>
         <li>
           <a routerLink="/transacoes" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
-            <fa-icon [icon]="faCalculator"></fa-icon>Transações
+            <fa-icon [icon]="faCalculator" [size]="isMobile ? '2x' : undefined"></fa-icon>Transações
           </a>
         </li>
         <li>
           <a routerLink="/pagamentos" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
-            <fa-icon [icon]="faMoneyBill"></fa-icon>Pagamentos
+            <fa-icon [icon]="faMoneyBill" [size]="isMobile ? '2x' : undefined"></fa-icon>Pagamentos
           </a>
         </li>
         <li>
           <a routerLink="/relatorios" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
-            <fa-icon [icon]="faClipboard"></fa-icon>Relatórios
+            <fa-icon [icon]="faClipboard" [size]="isMobile ? '2x' : undefined"></fa-icon>Relatórios
           </a>
         </li>
       </ul>
@@ -28,7 +28,7 @@
 
     <section>
       <a routerLink="/configuracoes" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
-        <fa-icon [icon]="faGear"></fa-icon>Configurações
+        <fa-icon [icon]="faGear" [size]="isMobile ? '2x' : undefined"></fa-icon>Configurações
       </a>
     </section>
   </nav>

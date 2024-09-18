@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 
 import { FaIconComponent } from "@fortawesome/angular-fontawesome";
 import {
@@ -29,4 +29,10 @@ export class NavegacaoLateralComponent {
   protected readonly faMoneyBill = faMoneyBill;
   protected readonly faClipboard = faClipboard;
   protected readonly faGear = faGear;
+  isMobile: boolean = window.innerWidth <= 1023;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.isMobile = event.target.innerWidth <= 1023;
+  }
 }

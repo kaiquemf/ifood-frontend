@@ -65,3 +65,16 @@ main {
     }
   }
 }
+
+@media (max-width: 1023px) {
+  #area-imagem {
+    display: none;
+  }
+
+  #area-login {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

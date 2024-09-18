@@ -58,7 +58,7 @@ export class PagamentosComponent {
   dataSource = ELEMENT_DATA;
   displayedColumns: string[] = ['id', 'nome', 'status', 'data', 'valor'];
 
-  constructor(private route: Router) { }
+  constructor() { }
 
   public filtrarTransacoes(status: string) {
     if (status === 'todos') {
