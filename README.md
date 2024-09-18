@@ -1,27 +1,18 @@
-# IfoodFrontend
+# Projeto Challenge iFood
+O Projeto foi desenvolvido com fins educativos, advindo de uma parceria da Fiap com o iFood, e tem como objetivo desenvolver um frontend para um sistema backoffice para quem comercializa dentro da plataforma iFood
+## Nome do Projeto: 
+  ### iFlow - Sistema de Backoffice do iFood
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
+## Especificações Técnicas
+* O projeto foi desenvolvido em Angular na [versão 18.1.2](https://github.com/angular/angular-cli);
+* Foi utilizado como Design System o Angular Material para criação de _inputs_ e _tables_.
 
-## Development server
+## Especificações de Testes
+Para testar o sistema será possível de duas maneiras, local e remotamente:
+* Para testar remotamente basta acessar o link do projeto na vercel [clicando aqui](https://ifood-frontend.vercel.app/);
+* Para testar localmente basta clonar o projeto do github e rodar com um npm start no terminal.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Informações do Grupo
+* Kaique Ferreira - RM557522
+* Maurício Gonçalves - RM555486
+* Henrique Novaes - RM98485
