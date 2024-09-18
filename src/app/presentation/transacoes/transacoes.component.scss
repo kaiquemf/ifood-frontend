@@ -48,6 +48,12 @@ main {
       display: flex;
       gap: 2rem;
       flex-wrap: wrap;
+
+      #exportar-transacao {
+        button {
+          height: 5.5rem;
+        }
+      }
     }
 
     table {
