@@ -61,10 +61,6 @@ export class DashboardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    this.ajustarTamanhoGraficos();
-  }
-
   @HostListener('window:resize', ['$event'])
   onResize() {
     this.ajustarTamanhoGraficos();
