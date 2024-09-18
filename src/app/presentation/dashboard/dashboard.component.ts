@@ -6,14 +6,14 @@ import { NgxChartsModule } from "@swimlane/ngx-charts";
 
 export interface CardsModel {
   titulo: string,
-  valor: string,
-  descricao: string
+  valor: number,
+  descricao: string,
 }
 
 const ELEMENT_DATA: CardsModel[] = [
-  {titulo: 'Pedidos Totais', valor: '310', descricao: 'Aumento de 40%'},
-  {titulo: 'Pedidos Bem Avaliados', valor: '270', descricao: 'Aumento de 67,7%'},
-  {titulo: 'Pedidos Mal Avaliados', valor: '40', descricao: 'Diminuição de 20%'}
+  {titulo: 'Saldo Atual', valor: 107.50, descricao: 'Aumento de 40%'},
+  {titulo: 'Receitas', valor: 167.50, descricao: 'Aumento de 67,7%'},
+  {titulo: 'Despesas', valor: 60, descricao: 'Diminuição de 20%'}
 ]
 
 @Component({
@@ -31,31 +31,31 @@ export class DashboardComponent implements OnInit {
   dataAtual: string = new Date().toLocaleDateString();
   dataSource = ELEMENT_DATA;
 
-  data: any[] = [];
-  view: [number, number] = [640, 680];
+  dataBarras: any[] = [
+    { "name": "Junho", "value": 57 },
+    { "name": "Julho", "value": 65 },
+    { "name": "Agosto", "value": 89 },
+  ];
+  viewBarras: [number, number] = [640, 680];
   showXAxis = true;
   showYAxis = true;
   gradient = false;
-  showLegend = false;
   showXAxisLabel = true;
   xAxisLabel = 'Meses';
   showYAxisLabel = true;
   yAxisLabel = 'Pedidos Totais';
-  colorScheme = 'vivid';
+  colorSchemeBarras = 'vivid';
 
+  dataPizza: any[] = [
+    {"name": "Saldo Atual", "value": 107},
+    {"name": "Receitas", "value": 167},
+    {"name": "Despesas", "value": 60}
+  ];
   viewPizza: [number, number] = [480, 340];
+  showLegend = true;
+  colorSchemePizza = 'fire';
 
   constructor() { }
 
-  ngOnInit() {
-    this.data = this.getData();
-  }
-
-  private getData() {
-    return [
-          { "name": "Junho", "value": 57 },
-          { "name": "Julho", "value": 186 },
-          { "name": "Agosto", "value": 310 },
-    ]
-  }
+  ngOnInit() { }
 }

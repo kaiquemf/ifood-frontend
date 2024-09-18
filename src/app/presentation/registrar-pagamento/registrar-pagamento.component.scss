@@ -1,0 +1,19 @@
+main {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+
+  section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  #registrar-pagamento {
+    padding: 2rem;
+    background: #EA1D2C;
+    color: #f6f5f5;
+    font-weight: 600;
+    border-radius: 0.5rem;
+  }
+}

@@ -54,11 +54,10 @@ export class LoginComponent implements OnInit {
     if (form.value.email === this.credenciaisLogin.email && form.value.senha === this.credenciaisLogin.senha) {
       this.router.navigate(["/dashboard"], {skipLocationChange: true})
         .then(() => {
-          this.snackBar.open("Acesso concedido!", '✖️');
+          this.snackBar.open("Acesso concedido!", '✖️', {duration: 2000});
         });
     } else {
-      this.snackBar.open("Credenciais inválidas. Verifique seu email e senha.", '✖️');
-      console.error('Credenciais inválidas. Verifique seu email e senha.');
+      this.snackBar.open("Credenciais inválidas. Verifique seu email e senha.", '✖️', {duration: 2000});
     }
   }
 }

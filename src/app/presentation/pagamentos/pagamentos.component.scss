@@ -1,0 +1,36 @@
+main {
+  padding: 2rem 18rem;
+  background: #f6f5f5;
+  height: 100%;
+
+  h1 {
+    font-weight: 500;
+    font-size: 2rem;
+    color: #232323;
+  }
+
+  header {
+    display: flex;
+
+    section {
+      display: flex;
+      flex-direction: column;
+      span {
+        font-size: 1.2rem;
+        color: #9e9e9e;
+      }
+    }
+  }
+
+  #pagamentos {
+    margin-top: 4rem;
+    background: #fdfbfb;
+    padding: 2rem;
+    border: 1px solid #cdcdcd;
+    border-radius: 1rem;
+    #header-pagamentos {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

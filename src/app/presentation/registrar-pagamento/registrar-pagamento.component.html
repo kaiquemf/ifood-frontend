@@ -1,0 +1,24 @@
+<main>
+  <h2>Registrar Pagamento</h2>
+
+  <section>
+    <mat-form-field appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input matInput [(ngModel)]="novoPagamento.nome" placeholder="Digite o nome">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Data</mat-label>
+      <input matInput [(ngModel)]="novoPagamento.data" placeholder="Digite a data" type="date">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Valor</mat-label>
+      <input matInput [(ngModel)]="novoPagamento.valor" placeholder="Digite o valor">
+    </mat-form-field>
+  </section>
+
+  <section style="display: inline-flex">
+    <button mat-raised-button color="primary" (click)="adicionarPagamento()" id="registrar-pagamento">Registrar Pagamento</button>
+  </section>
+</main>

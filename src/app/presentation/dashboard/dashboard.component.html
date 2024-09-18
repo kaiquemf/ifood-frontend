@@ -16,7 +16,7 @@
       <h3>{{ card.titulo }}</h3>
 
       <section>
-        <span>{{card.valor}}</span>
+        <span>R${{card.valor.toFixed(2)}}</span>
         <p>{{card.descricao}}</p>
       </section>
     </div>
@@ -24,9 +24,9 @@
 
   <section id="seccao-dashboards">
     <ngx-charts-bar-vertical
-      [view]="view"
-      [scheme]="colorScheme"
-      [results]="data"
+      [view]="viewBarras"
+      [scheme]="colorSchemeBarras"
+      [results]="dataBarras"
       [gradient]="gradient"
       [xAxis]="showXAxis"
       [yAxis]="showYAxis"
@@ -39,10 +39,10 @@
 
     <ngx-charts-pie-chart
       [view]="viewPizza"
-      [scheme]="colorScheme"
-      [results]="data"
+      [scheme]="colorSchemePizza"
+      [results]="dataPizza"
       [legend]="showLegend"
-      [legendTitle]="'Pedidos Totais'"
+      [legendTitle]="'Receitas'"
       id="dashboard-pie">
     </ngx-charts-pie-chart>
   </section>
