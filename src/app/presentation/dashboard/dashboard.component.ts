@@ -52,7 +52,6 @@ export class DashboardComponent implements OnInit {
   minViewPizza: [number, number] = [320, 160];
   viewPizza: [number, number] = [...this.maxViewPizza];
   dataPizza: any[] = [
-    {"name": "Saldo Atual", "value": 107},
     {"name": "Receitas", "value": 167},
     {"name": "Despesas", "value": 60}
   ];
