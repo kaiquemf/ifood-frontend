@@ -1,12 +1,15 @@
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
-import { MatFormField, MatLabel } from "@angular/material/form-field";
+import { MatFormField, MatLabel, MatPrefix } from "@angular/material/form-field";
+import { MatButton, MatIconButton } from "@angular/material/button";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { MatButton } from "@angular/material/button";
+import { Router, RouterLink } from "@angular/router";
 import { MatInput } from "@angular/material/input";
 import { NgOptimizedImage } from "@angular/common";
 import { Component, OnInit } from '@angular/core';
 import { MatIcon } from "@angular/material/icon";
-import {Router, RouterLink} from "@angular/router";
+
+import { FaIconComponent } from "@fortawesome/angular-fontawesome";
+import {faLock, faUser} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-login',
@@ -19,14 +22,18 @@ import {Router, RouterLink} from "@angular/router";
     MatButton,
     NgOptimizedImage,
     RouterLink,
-    MatIcon
+    MatIcon,
+    FaIconComponent,
+    MatPrefix,
+    MatIconButton
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss', '../../shared/scss/login.scss']
 })
 export class LoginComponent implements OnInit {
-  botaoIfood: boolean = false;
   loginFormGroup!: FormGroup;
+  protected readonly faUser = faUser;
+  protected readonly faLock = faLock;
   credenciaisLogin = {email: 'admin@admin.com', senha: 'admin'};
 
   constructor(private fb: FormBuilder, private snackBar: MatSnackBar, private router: Router) { }
@@ -45,14 +52,12 @@ export class LoginComponent implements OnInit {
   public entrar(form: FormGroup) {
 
     if (form.value.email === this.credenciaisLogin.email && form.value.senha === this.credenciaisLogin.senha) {
-      this.router.navigate(["/relatorios"], {skipLocationChange: true})
+      this.router.navigate(["/dashboard"], {skipLocationChange: true})
         .then(() => {
-          this.snackBar.open("Acesso concedido!", '✖️');
+          this.snackBar.open("Acesso concedido!", '✖️', {duration: 2000});
         });
     } else {
-      this.snackBar.open("Credenciais inválidas. Verifique seu email e senha.", '✖️');
-      console.error('Credenciais inválidas. Verifique seu email e senha.');
+      this.snackBar.open("Credenciais inválidas. Verifique seu email e senha.", '✖️', {duration: 2000});
     }
   }
-
 }
