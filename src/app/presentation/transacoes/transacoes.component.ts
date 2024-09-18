@@ -16,17 +16,24 @@ import {MatOption, MatSelect} from "@angular/material/select";
 import {MatButton} from "@angular/material/button";
 
 export interface TransacoesModel {
-  id: string,
-  nome: string,
-  status: string,
+  id: number,
+  tipo: string,
+  valor: number,
   data: string,
-  valor: string
+  descricao: string,
 }
 
 const ELEMENT_DATA: TransacoesModel[] = [
-  {id: '107', nome: 'Marcos Cesar', status: 'Pendente', data: '17/02/2024', valor: 'R$35,00'},
-  {id: '12', nome: 'Carlos Cesar', status: 'Aprovado', data: '05/12/2023', valor: 'R$25,50'},
-  {id: '11', nome: 'Carlos Cesar', status: 'Reprovado', data: '05/12/2023', valor: 'R$25,50'}
+  { id: 1, tipo: 'Receita', valor: 25.00, data: '2023-09-01 12:30:00', descricao: 'Pedido de Burger Clássico - Cliente: João Silva' },
+  { id: 2, tipo: 'Receita', valor: 35.50, data: '2023-09-01 13:15:00', descricao: 'Pedido de Pizza Margherita - Cliente: Maria Souza' },
+  { id: 3, tipo: 'Despesa', valor: 10.00, data: '2023-09-01 14:00:00', descricao: 'Compra de embalagens' },
+  { id: 4, tipo: 'Receita', valor: 18.00, data: '2023-09-02 11:45:00', descricao: 'Pedido de Salada Caesar - Cliente: Carlos Lima' },
+  { id: 5, tipo: 'Receita', valor: 40.00, data: '2023-09-02 12:00:00', descricao: 'Pedido de Sushi Combo - Cliente: Ana Pereira' },
+  { id: 6, tipo: 'Despesa', valor: 20.00, data: '2023-09-02 13:30:00', descricao: 'Compra de ingredientes frescos' },
+  { id: 7, tipo: 'Receita', valor: 15.00, data: '2023-09-03 10:00:00', descricao: 'Pedido de Smoothie Tropical - Cliente: Paula Gomes' },
+  { id: 8, tipo: 'Receita', valor: 22.00, data: '2023-09-03 11:30:00', descricao: 'Pedido de Frango Grelhado com Legumes - Cliente: José Oliveira' },
+  { id: 9, tipo: 'Receita', valor: 12.00, data: '2023-09-03 12:15:00', descricao: 'Pedido de Pastel de Queijo - Cliente: Fernanda Costa' },
+  { id: 10, tipo: 'Despesa', valor: 30.00, data: '2023-09-03 13:00:00', descricao: 'Compra de bebidas' },
 ]
 
 @Component({
@@ -57,13 +64,15 @@ const ELEMENT_DATA: TransacoesModel[] = [
 export class TransacoesComponent {
   dataAtual: string = new Date().toLocaleDateString();
   dataSource = ELEMENT_DATA;
-  displayedColumns: string[] = ['id', 'nome', 'status', 'data', 'valor'];
+  displayedColumns: string[] = ['id', 'tipo', 'valor', 'data', 'descricao'];
+  public filtroSelecionado: string = 'todos';
 
-  public filtrarTransacoes(status: string) {
-    if (status === 'todos') {
+  public filtrarTransacoes(tipo: string) {
+    this.filtroSelecionado = tipo;
+    if (tipo === 'todos') {
       this.dataSource = ELEMENT_DATA;
     } else {
-      this.dataSource = ELEMENT_DATA.filter(transacao => transacao.status.toLowerCase() === status);
+      this.dataSource = ELEMENT_DATA.filter(transacao => transacao.tipo.toLowerCase() === tipo);
     }
   }
 
@@ -71,16 +80,26 @@ export class TransacoesComponent {
     const csvData = this.converterParaCSV(this.dataSource);
     const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
     const url = window.URL.createObjectURL(blob);
+
+    const nomeArquivo = this.getNomeArquivoExportado();
+
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'transacoes_filtradas.csv';
+    a.download = nomeArquivo;
     a.click();
     window.URL.revokeObjectURL(url);
   }
 
+  private getNomeArquivoExportado(): string {
+    let tipo = this.filtroSelecionado !== 'todos' ? this.filtroSelecionado : '';
+    tipo = tipo ? `_${tipo}` : '';
+    return `transacoes${tipo}.csv`;
+  }
+
   private converterParaCSV(data: TransacoesModel[]): string {
     const header = ['Id', 'Nome', 'Status', 'Data', 'Valor'];
-    const rows = data.map(transacao => [transacao.id, transacao.nome, transacao.status, transacao.data, transacao.valor]);
+    const rows = data.map(transacao => [transacao.id, transacao.tipo,
+      transacao.valor, transacao.data, transacao.descricao]);
 
     let csvContent = header.join(',') + '\n';
     rows.forEach(rowArray => {

@@ -17,9 +17,8 @@
           <mat-label>Filtrar</mat-label>
           <mat-select (selectionChange)="filtrarTransacoes($event.value)">
             <mat-option value="todos" style="font-size: 1.6rem">Todos</mat-option>
-            <mat-option value="aprovado" style="font-size: 1.6rem">Aprovado</mat-option>
-            <mat-option value="pendente" style="font-size: 1.6rem">Pendente</mat-option>
-            <mat-option value="reprovado" style="font-size: 1.6rem">Reprovado</mat-option>
+            <mat-option value="receita" style="font-size: 1.6rem">Receita</mat-option>
+            <mat-option value="despesa" style="font-size: 1.6rem">Despesa</mat-option>
           </mat-select>
         </mat-form-field>
 
@@ -33,14 +32,14 @@
         <td mat-cell *matCellDef="let element"> {{element.id}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="nome">
+      <ng-container matColumnDef="tipo">
         <th mat-header-cell *matHeaderCellDef> Nome </th>
-        <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="status">
-        <th mat-header-cell *matHeaderCellDef> Status </th>
-        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+      <ng-container matColumnDef="valor">
+        <th mat-header-cell *matHeaderCellDef> Valor </th>
+        <td mat-cell *matCellDef="let element"> {{element.valor}} </td>
       </ng-container>
 
       <ng-container matColumnDef="data">
@@ -48,9 +47,9 @@
         <td mat-cell *matCellDef="let element"> {{element.data}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="valor">
-        <th mat-header-cell *matHeaderCellDef> Valor </th>
-        <td mat-cell *matCellDef="let element"> {{element.valor}} </td>
+      <ng-container matColumnDef="descricao">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element"> {{element.descricao}} </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
