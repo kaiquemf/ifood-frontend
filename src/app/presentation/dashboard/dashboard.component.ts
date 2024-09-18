@@ -66,6 +66,10 @@ export class DashboardComponent implements OnInit {
     this.ajustarTamanhoGraficos();
   }
 
+  ngOnInit() {
+    this.ajustarTamanhoGraficos();
+  }
+
   private ajustarTamanhoGraficos() {
     const larguraTela = window.innerWidth;
 
